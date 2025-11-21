@@ -66,6 +66,19 @@ The analysis is structured around the transition from traditional RESTful APIs t
 | **Key Advantage** | Integration with Kinesis Data Streams allows for immediate processing of streaming data. | Extremely fast to set up for simple filtering and aggregation logic on event data. | Superior for building complex, custom data processing graphs; highly robust and unified approach to data processing. |
 
 
+## 4. Use Case Analysis
+
+### Scenario 1: Global IoT Fleet Management Platform
+A logistics company needs to process real-time telemetry from a global fleet of 500,000 vehicles. Data includes GPS coordinates, engine diagnostics, and driver behavior. The system must ingest massive, intermittent data streams and perform simple, continuous processing.
+
+Recommendation: Azure
+
+- Cost:	Azure Event Hubs pricing is optimized for Throughput Units (TUs), which scale cost-effectively for the high volume of small, intermittent data packets typical of IoT telemetry, resulting in low ingestion costs.
+- Performance:	Event Hubs provides massive, reliable data ingress, specifically designed for high-rate, low-latency event capture. Azure Stream Analytics enables quick, near-real-time processing for simple business logic.
+- Ease of Integration: Azure IoT Hub simplifies the connection and identity management for hundreds of thousands of devices. Azure SignalR Service offers a superior, fully managed WebSocket layer for real-time fleet dashboard updates with minimal developer effort.
+- Ecosystem: Strong fit for enterprises already using Microsoft services. Potential cost savings and streamlined governance through integration with Azure Active Directory and the Azure Hybrid Benefit for backend compute.
+
+
 
 
 
