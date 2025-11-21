@@ -20,7 +20,50 @@ As applications increasingly rely on asynchronous, low-latency communication and
 The analysis is structured around the transition from traditional RESTful APIs to modern, flexible architectures like GraphQL and WebSockets, and the foundational services required for handling continuous, streaming data. The choice of a CSP often dictates the performance, development velocity, and long-term maintenance burden of these complex, distributed systems.
 
 
+## 3. Service Comparison
 
+### a) RESTful API Services
+
+| Feature | AWS | Azure | GCP |
+| :--- | :--- | :--- | :--- |
+| **Primary Service** | API Gateway | API Management | Apigee |
+| **Management Focus** | Cloud-native hosting, routing, and scaling, tightly integrated with Lambda. | Full-lifecycle management, hybrid and multi-cloud support, strong policy engine. | Full API lifecycle, analytics, monetization, and advanced enterprise policies. |
+| **Pricing Model** | Pay-as-you-go per million calls (tiered pricing). | Tiered pricing (Developer, Basic, Standard, Premium) based on allocated units. Also offers a Consumption tier. | Subscription-based tiers (Standard, Enterprise). It can be expensive but includes advanced features. |
+
+
+### b) GraphQL Services
+
+| Feature | AWS | Azure | GCP |
+| :--- | :--- | :--- | :--- |
+| **Native GraphQL Support** | AWS AppSync | API Management | Cloud Endpoints |
+| **Implementation** | Serverless GraphQL service with built-in resolvers for DynamoDB, Lambda, and HTTP endpoints. Includes native real-time subscriptions. | APIM can be configured to expose and protect a GraphQL endpoint, but requires a separate compute to host the actual GraphQL engine. | Cloud Endpoints provides management and security layers for a GraphQL service running on compute services like Cloud Run or GKE. |
+| **Real-Time Feature** | Native GraphQL Subscriptions via AppSync's managed WebSocket layer. | Requires integration with Azure SignalR Service or custom WebSockets for real-time. | Requires custom WebSockets integration on the underlying compute service. |
+
+### c) WebSocket Services
+
+| Feature | AWS | Azure | GCP |
+| :--- | :--- | :--- | :--- |
+| **Primary Service** | API Gateway (WebSocket APIs) | SignalR Service | Cloud Run (Host) / Apigee (Proxy) |
+| **Architecture** | Managed gateway endpoint that routes real-time messages to serverless targets (Lambda, Kinesis). | Fully managed service built specifically for real-time two-way communication; handles connection management and scale for application developers. | Requires developers to write and host their own WebSocket server application (often on Cloud Run). |
+| **Scalability** | Scales automatically based on connection volume and message rate. | Purpose-built to scale real-time connections easily, abstracting infrastructure. Often, the easiest to implement. | Dependent on the underlying compute platform and the developer's application code. |
+
+
+### d) Data Streaming Services
+
+| Feature | AWS | Azure | GCP |
+| :--- | :--- | :--- | :--- |
+| **Stream Platform** | Kinesis Data Streams | Event Hubs | Pub/Sub |
+| **Core Model** | Ordered, shard-based streams for data persistence and processing. Optimized for real-time analytics. | Partitioned event ingestion service. Highly optimized for IoT and high-volume data capture. | Global, simple, asynchronous publish/subscribe messaging service. |
+| **Data Ingestion** | Kinesis Data Firehose provides simple ingestion to S3, Redshift, etc. | Event Hubs Capture automatically saves data to Azure Storage or Data Lake. | Simple API for high-volume publishing. |
+
+
+### e) Stream Analytics
+
+| Feature | AWS | Azure | GCP |
+| :--- | :--- | :--- | :--- |
+| **Analytics Service** | Kinesis Data Analytics | Stream Analytics | Dataflow |
+| **Technology** | Supports SQL queries or Apache Flink for complex, stateful stream processing. | Uses a simple, SQL-like language to perform transformations and aggregations on data from Event Hubs. | Uses Apache Beam (unified batch and stream processing engine); highly flexible for complex ETL and ML pipelines. |
+| **Key Advantage** | Integration with Kinesis Data Streams allows for immediate processing of streaming data. | Extremely fast to set up for simple filtering and aggregation logic on event data. | Superior for building complex, custom data processing graphs; highly robust and unified approach to data processing. |
 
 
 
