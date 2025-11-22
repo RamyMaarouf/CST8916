@@ -79,7 +79,20 @@ Recommendation: Azure
 - Ecosystem: Strong fit for enterprises already using Microsoft services. Potential cost savings and streamlined governance through integration with Azure Active Directory and the Azure Hybrid Benefit for backend compute.
 
 
+## 5. Conclusion
 
+While AWS remains the overall market leader and the default choice for robust and diverse applications, Azure provides highly refined PaaS services optimized for enterprise and hybrid cloud environments. GCP emerges as the strongest platform for organizations whose core business relies on complex, unified data intelligence and advanced API governance. The choice between these leaders ultimately depends on three factors: existing organizational ecosystem, complexity of the data pipeline, and the need for a fully managed, high-speed GraphQL layer.
+
+
+## 6. References
+
+- Amazon Web Services. AWS AppSync: Build data-driven applications with serverless GraphQL. https://aws.amazon.com/appsync/
+- Amazon Web Services. Amazon API Gateway Pricing. https://aws.amazon.com/api-gateway/pricing/
+- Google Cloud. Apigee API management. https://cloud.google.com/apigee
+- Google Cloud. Pricing – Dataflow. https://cloud.google.com/dataflow/pricing
+- Microsoft Azure. Pricing – Event Hubs. https://azure.microsoft.com/en-us/pricing/details/event-hubs/
+- Microsoft Azure. SignalR Service. https://azure.microsoft.com/en-us/services/signalr-service/
+- Google. Gemini Flash 2.5. Utilized for conducting cross-platform service comparisons, synthesizing complex technical data, and refining the use case justifications based on cost and architectural fit.
 
 
 
